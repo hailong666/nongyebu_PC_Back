@@ -322,7 +322,6 @@ function doUpdateGoodPics(info) {
 					batchFns.push(clipImage(src,path.join(process.cwd(),pic.pics_sma),200,200));
 					pic.goods_id = good.goods_id;
 					// 2.2 数据库中新建数据记录
-					pic.pics_big = "https://82.156.2.244:6000" + pic.pics_big;
 					batchFns.push(createGoodPic(pic));
 				}
 			});
