@@ -314,7 +314,7 @@ function doUpdateGoodPics(info) {
 					var src = path.join(process.cwd(),pic.pic);
 					var tmp = src.split(path.sep);
 					var filename = tmp[tmp.length - 1];
-					pic.pics_big = "https://127.0.0.1:6000/uploads/goodspics/big_" + filename;
+					pic.pics_big = "/uploads/goodspics/big_" + filename;
 					pic.pics_mid = "/uploads/goodspics/mid_" + filename;
 					pic.pics_sma = "/uploads/goodspics/sma_" + filename;
 					batchFns.push(clipImage(src,path.join(process.cwd(),pic.pics_big),800,800));
@@ -322,6 +322,7 @@ function doUpdateGoodPics(info) {
 					batchFns.push(clipImage(src,path.join(process.cwd(),pic.pics_sma),200,200));
 					pic.goods_id = good.goods_id;
 					// 2.2 数据库中新建数据记录
+					pic.pics_big = "https://82.156.2.244:6000" + pic.pics_big;
 					batchFns.push(createGoodPic(pic));
 				}
 			});
