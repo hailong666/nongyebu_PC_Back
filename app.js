@@ -122,6 +122,6 @@ app.use(function(req, res, next) {
   res.sendResult(null, 404, 'Not Found')
 })
 
-app.listen(6000)
+app.listen(8000)
 
 module.exports = app

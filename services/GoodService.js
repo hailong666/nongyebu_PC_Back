@@ -320,6 +320,7 @@ function doUpdateGoodPics(info) {
 					batchFns.push(clipImage(src,path.join(process.cwd(),pic.pics_big),800,800));
 					batchFns.push(clipImage(src,path.join(process.cwd(),pic.pics_mid),400,400));
 					batchFns.push(clipImage(src,path.join(process.cwd(),pic.pics_sma),200,200));
+					pic.pics_big = "http://libin.easygoing.com.cn:8888/uploads/goodspics/big_" + filename;
 					pic.goods_id = good.goods_id;
 					// 2.2 数据库中新建数据记录
 					batchFns.push(createGoodPic(pic));
